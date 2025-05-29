@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./main.css">
+  <title>Food Info Hub</title>
+</head>
+<body>
+
+  <header>
+    Food Info Hub
+  </header>
+
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>Add Food</li>
+      <li>Recipes</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <div class="food-card">
+      <img class="card-image" src="./assets/tuna_rice_ball.jpg" alt="Tuna Rice Ball">
+      <div class="food-title">Tuna Rice Ball</div>
+      <div class="food-desc">Made with only a handful of ingredients, these Tuna Mayo Rice Balls make for a great snack or meal. All you need are 5 simple ingredients and a few minutes to roll them together...</div>
+      <button class="more-btn">More...</button>
+    </div>
+
+    <div class="food-card">
+      <img class="card-image" src="./assets/spagetti.jpg" alt="Spaghetti">
+      <div class="food-title">Spaghetti</div>
+      <div class="food-desc">This is our favorite weeknight friendly spaghetti recipe with a meat sauce made completely from scratch. You can use ground beef, turkey, pork, chicken, or ...</div>
+      <button class="more-btn">More...</button>
+    </div>
+
+    <div class="food-card">
+      <img class="card-image" src="./assets/sandwich.jpg" alt="Sandwich">
+      <div class="food-title">Suspicious Sandwich</div>
+      <div class="food-desc">A sandwich is a dish typically consisting variously of meat, cheese, sauces, and vegetables used as a filling between slices of bread, or placed atop a ...</div>
+      <button class="more-btn">More...</button>
+    </div>
+
+    <div class="food-card">
+      <img class="card-image" src="./assets/chicken.jpg" alt="Fried Chicken">
+      <div class="food-title">Fried Chicken</div>
+      <div class="food-desc">Fried chicken, also called Southern fried chicken, is a dish consisting of chicken pieces that have been coated with seasoned flour or batter and pan-fried, ...</div>
+      <button class="more-btn">More...</button>
+    </div>
+
+    <div class="food-card">
+      <img class="card-image" src="./assets/spagetti.jpg" alt="Spaghetti">
+      <div class="food-title">Spaghetti</div>
+      <div class="food-desc">This is our favorite weeknight friendly spaghetti recipe with a meat sauce made completely from scratch. You can use ground beef, turkey, pork, chicken, or ...</div>
+      <button class="more-btn">More...</button>
+    </div>
+
+    <div class="food-card">
+      <img class="card-image" src="./assets/sandwich.jpg" alt="Sandwich">
+      <div class="food-title">Suspicious Sandwich</div>
+      <div class="food-desc">A sandwich is a dish typically consisting variously of meat, cheese, sauces, and vegetables used as a filling between slices of bread, or placed atop a ...</div>
+      <button class="more-btn">More...</button>
+    </div>
+
+    <div class="food-card">
+      <img class="card-image" src="./assets/tuna_rice_ball.jpg" alt="Tuna Rice Ball">
+      <div class="food-title">Tuna Rice Ball</div>
+      <div class="food-desc">Made with only a handful of ingredients, these Tuna Mayo Rice Balls make for a great snack or meal. All you need are 5 simple ingredients and a few minutes to roll them together...</div>
+      <button class="more-btn">More...</button>
+    </div>
+
+    <div class="food-card">
+      <img class="card-image" src="./assets/spagetti.jpg" alt="Spaghetti">
+      <div class="food-title">Spaghetti</div>
+      <div class="food-desc">This is our favorite weeknight friendly spaghetti recipe with a meat sauce made completely from scratch. You can use ground beef, turkey, pork, chicken, or ...</div>
+      <button class="more-btn">More...</button>
+    </div>
+
+    <div class="food-card">
+      <img class="card-image" src="./assets/sandwich.jpg" alt="Sandwich">
+      <div class="food-title">Suspicious Sandwich</div>
+      <div class="food-desc">A sandwich is a dish typically consisting variously of meat, cheese, sauces, and vegetables used as a filling between slices of bread, or placed atop a ...</div>
+      <button class="more-btn">More...</button>
+    </div>
+  </div>
+</body>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Food_icon.svg/2048px-Food_icon.svg.png" alt="food icon">
+<script>
+  document.querySelectorAll('.more-btn').forEach((button, index) => {
+    button.addEventListener('click', () => {
+      const card = button.parentElement;
+      if (index === 0 || index === 3 || index === 5) {
+        card.classList.add('drop-and-disappear');
+        setTimeout(() => card.remove(), 1000);
+      } else {
+        card.classList.toggle('shift-card');
+      }
+    });
+  });
+  
+  function createRaindrop() {
+    const raindrop = document.createElement('div');
+    raindrop.classList.add('raindrop');
+    raindrop.textContent = '💧';
+    raindrop.style.left = Math.random() * window.innerWidth + 'px';
+    raindrop.style.animationDuration = (5 + Math.random() * 5) + 's';
+    raindrop.style.fontSize = (12 + Math.random() * 20) + 'px';
+    document.body.appendChild(raindrop);
+
+    setTimeout(() => {
+      raindrop.remove();
+    }, 10000);
+  }
+
+  setInterval(createRaindrop, 300);
+</script>
+</html>

@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Papyrus', fantasy;
+    background-color: #fff0f5;
+}
+
+header {
+    background-color: #ff69b4;
+    color: #00ff00;
+    font-size: 45px;
+    text-align: right;
+    padding: 20px;
+    position: absolute;
+    width: 180%;
+    transform: rotate(1deg);
+    z-index: 99;
+}
+
+nav {
+    position: absolute;
+    top: 180px;
+    left: -80px;
+    width: 300px;
+    height: 100vh;
+    background-color: #ffff33;
+    z-index: 1;
+    transform: rotate(-5deg);
+}
+
+nav ul {
+    list-style-type: square;
+    padding-left: 100px;
+}
+
+nav li {
+    margin: 40px 0;
+    font-size: 20px;
+    color: darkred;
+    transform: rotate(15deg);
+}
+
+.content {
+    margin-left: 30px;
+    margin-top: 300px;
+    width: 300%;
+    padding: 80px;
+    background: repeating-linear-gradient(
+    -45deg,
+    #ffe4b5,
+    #ffe4b5 15px,
+    #add8e6 15px,
+    #add8e6 30px
+    );
+    border: 6px dotted #ff4500;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 50px;
+}
+
+.food-card {
+    width: 400px;
+    height: 250px;
+    background-color: #98fb98;
+    padding: 30px;
+    margin: 80px;
+    transform: rotate(10deg);
+    box-shadow: 15px 15px 0px magenta;
+    border-radius: 50px 0 50px 0;
+}
+
+.food-title {
+    font-size: 28px;
+    color: #8b0000;
+    text-shadow: 2px 2px yellow;
+}
+
+.food-desc {
+    font-style: italic;
+    margin-top: 15px;
+    color: navy;
+}
+
+img {
+    width: 250px;
+    height: auto;
+    position: fixed;
+    left: -40px;
+    top: -40px;
+    transform: rotate(-30deg);
+}
+.card-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px dashed purple;
+    transform: rotate(-20deg);
+    margin-bottom: 10px;
+}
+
+
+.more-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff00ff;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transform: rotate(3deg);
+}
+
+.shift-card {
+    transform: translateX(200px) rotate(10deg);
+    transition: transform 0.5s ease;
+}
+
+.raindrop {
+    position: fixed;
+    top: -10px;
+    z-index: 1000;
+    color: #00bfff;
+    font-size: 24px;
+    pointer-events: none;
+    animation-name: raindrop-fall;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes raindrop-fall {
+    0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    }
+    100% {
+    transform: translateY(100vh) rotate(180deg);
+    opacity: 0;
+    }
+}
+
+
+.drop-and-disappear {
+    animation: fall-away 1s forwards;
+}
+
+@keyframes fall-away {
+    0% {
+    transform: translateY(0);
+    opacity: 1;
+    }
+    100% {
+    transform: translateY(300px);
+    opacity: 0;
+    }
+}
